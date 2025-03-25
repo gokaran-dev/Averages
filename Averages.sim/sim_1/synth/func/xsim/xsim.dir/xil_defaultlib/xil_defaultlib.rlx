@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+D:/Mtech/Vivado/Averages/Averages.sim/sim_1/synth/func/xsim/Running_Average_TB_func_synth.v,1742924806,verilog,,D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Register_8bit_TB.v,,Dynamic_11bit_Adder;Running_Average;glbl,,,,,,,,
+D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Dynamic_11bit_Adder_TB.v,1742922188,verilog,,D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Running_Average_TB.v,,Dynamic_11bit_Adder_TB,,,,,,,,
+D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Register_8bit_TB.v,1742911578,verilog,,D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Dynamic_11bit_Adder_TB.v,,Register_8bit_TB,,,,,,,,
+D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Running_Average_TB.v,1742923730,verilog,,,,Running_Average_TB,,,,,,,,

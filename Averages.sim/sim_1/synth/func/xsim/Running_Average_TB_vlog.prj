@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"Running_Average_TB_func_synth.v" \
+"../../../../../Averages.srcs/sim_1/new/Register_8bit_TB.v" \
+"../../../../../Averages.srcs/sim_1/new/Dynamic_11bit_Adder_TB.v" \
+"../../../../../Averages.srcs/sim_1/new/Running_Average_TB.v" \
+
+# Do not sort compile order
+nosort

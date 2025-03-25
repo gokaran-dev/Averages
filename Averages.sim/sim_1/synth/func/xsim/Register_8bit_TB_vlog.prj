@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"Register_8bit_TB_func_synth.v" \
+"../../../../../Averages.srcs/sim_1/new/Register_8bit_TB.v" \
+
+# Do not sort compile order
+nosort

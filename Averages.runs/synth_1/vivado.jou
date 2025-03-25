@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Mar 25 23:16:15 2025
+# Process ID: 18792
+# Current directory: D:/Mtech/Vivado/Averages/Averages.runs/synth_1
+# Command line: vivado.exe -log Running_Average.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Running_Average.tcl
+# Log file: D:/Mtech/Vivado/Averages/Averages.runs/synth_1/Running_Average.vds
+# Journal file: D:/Mtech/Vivado/Averages/Averages.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Running_Average.tcl -notrace

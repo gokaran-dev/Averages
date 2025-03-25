@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Mtech/Vivado/Averages/Averages.sim/sim_1/synth/func/xsim/Running_Average_TB_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Dynamic_11bit_Adder
+INFO: [VRFC 10-311] analyzing module Running_Average
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Register_8bit_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register_8bit_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Dynamic_11bit_Adder_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Dynamic_11bit_Adder_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Mtech/Vivado/Averages/Averages.srcs/sim_1/new/Running_Average_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Running_Average_TB
