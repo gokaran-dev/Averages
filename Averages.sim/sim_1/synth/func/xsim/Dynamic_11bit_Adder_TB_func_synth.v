@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Tue Mar 25 22:59:21 2025
+// Date        : Thu Mar 27 21:21:44 2025
 // Host        : DESKTOP-IJF0GJG running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               D:/Mtech/Vivado/Averages/Averages.sim/sim_1/synth/func/xsim/Dynamic_11bit_Adder_TB_func_synth.v
@@ -13,42 +13,15 @@
 `timescale 1 ps / 1 ps
 
 module Register_8bit
-   (sum,
-    sum1,
-    D,
+   (data_8bit_OBUF,
     rst_IBUF,
     clk_IBUF_BUFG,
     data_stream_IBUF);
-  output [5:0]sum;
-  output sum1;
-  output [0:0]D;
+  output [7:0]data_8bit_OBUF;
   input rst_IBUF;
   input clk_IBUF_BUFG;
   input [63:0]data_stream_IBUF;
 
-  wire \ALU/FA1/carry1 ;
-  wire \ALU/FA1/sum1 ;
-  wire \ALU/FA2/carry1 ;
-  wire \ALU/FA2/sum1 ;
-  wire \ALU/FA3/carry1 ;
-  wire \ALU/FA3/sum1 ;
-  wire \ALU/FA4/carry1 ;
-  wire \ALU/FA4/sum1 ;
-  wire \ALU/FA5/carry1 ;
-  wire \ALU/FA5/carry2 ;
-  wire \ALU/FA5/sum1 ;
-  wire \ALU/FA6/carry1 ;
-  wire \ALU/FA6/sum1 ;
-  wire \ALU/FA7/carry1 ;
-  wire \ALU/FA7/sum1 ;
-  wire \ALU/FA8/carry2 ;
-  wire \ALU/carry_1 ;
-  wire \ALU/carry_2 ;
-  wire \ALU/carry_3 ;
-  wire \ALU/carry_4 ;
-  wire \ALU/carry_5 ;
-  wire \ALU/carry_6 ;
-  wire [0:0]D;
   wire D0;
   wire clk_IBUF_BUFG;
   wire [7:0]count;
@@ -60,7 +33,7 @@ module Register_8bit
   wire d_load;
   wire d_load_i_2_n_0;
   wire [7:1]data0;
-  wire [6:0]data_8bit;
+  wire [7:0]data_8bit_OBUF;
   wire [63:0]data_stream_IBUF;
   wire ff0_i_10_n_0;
   wire ff0_i_11_n_0;
@@ -89,37 +62,17 @@ module Register_8bit
   wire ff0_i_7_n_0;
   wire ff0_i_8_n_0;
   wire ff0_i_9_n_0;
-  wire \mean[0]_i_2_n_0 ;
-  wire \mean[0]_i_3_n_0 ;
-  wire \mean[1]_i_2_n_0 ;
-  wire \mean[1]_i_3_n_0 ;
-  wire \mean[2]_i_2_n_0 ;
-  wire \mean[2]_i_3_n_0 ;
-  wire \mean[3]_i_2_n_0 ;
-  wire \mean[3]_i_3_n_0 ;
-  wire \mean[4]_i_2_n_0 ;
-  wire \mean[4]_i_3_n_0 ;
-  wire \mean[5]_i_12_n_0 ;
-  wire \mean[5]_i_13_n_0 ;
-  wire \mean[5]_i_16_n_0 ;
-  wire \mean[5]_i_18_n_0 ;
-  wire \mean[5]_i_19_n_0 ;
-  wire \mean[6]_i_2_n_0 ;
-  wire \mean[7]_i_4_n_0 ;
-  wire p_0_in__0;
+  wire p_0_in;
   wire rst_IBUF;
-  wire [0:0]size;
-  wire [5:0]sum;
-  wire sum1;
 
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \count[0]_i_1 
        (.I0(rst_IBUF),
         .I1(count[0]),
         .O(\count[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hF6)) 
     \count[1]_i_1 
@@ -127,7 +80,7 @@ module Register_8bit
         .I1(count[0]),
         .I2(rst_IBUF),
         .O(data0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'hFF6A)) 
     \count[2]_i_1 
@@ -136,7 +89,7 @@ module Register_8bit
         .I2(count[0]),
         .I3(rst_IBUF),
         .O(data0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'hFFFF6AAA)) 
     \count[3]_i_1 
@@ -166,14 +119,14 @@ module Register_8bit
         .I4(count[3]),
         .I5(rst_IBUF),
         .O(data0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \count[5]_i_2 
        (.I0(count[1]),
         .I1(count[0]),
         .O(\count[5]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'h06)) 
     \count[6]_i_1 
@@ -190,7 +143,7 @@ module Register_8bit
         .I3(count[0]),
         .I4(\count[7]_i_3_n_0 ),
         .O(\count[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h006A)) 
     \count[7]_i_2 
@@ -289,8 +242,8 @@ module Register_8bit
         .I2(count[1]),
         .I3(count[2]),
         .I4(d_load_i_2_n_0),
-        .O(p_0_in__0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+        .O(p_0_in));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     d_load_i_2
@@ -304,7 +257,7 @@ module Register_8bit
     d_load_reg
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(p_0_in__0),
+        .D(p_0_in),
         .Q(d_load),
         .R(1'b0));
   (* BOX_TYPE = "PRIMITIVE" *) 
@@ -317,7 +270,7 @@ module Register_8bit
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
         .D(D0),
-        .Q(data_8bit[0]),
+        .Q(data_8bit_OBUF[0]),
         .R(rst_IBUF));
   LUT6 #(
     .INIT(64'hA8A8A8080808A808)) 
@@ -558,8 +511,8 @@ module Register_8bit
     ff1
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(data_8bit[0]),
-        .Q(data_8bit[1]),
+        .D(data_8bit_OBUF[0]),
+        .Q(data_8bit_OBUF[1]),
         .R(rst_IBUF));
   (* BOX_TYPE = "PRIMITIVE" *) 
   FDRE #(
@@ -570,8 +523,8 @@ module Register_8bit
     ff2
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(data_8bit[1]),
-        .Q(data_8bit[2]),
+        .D(data_8bit_OBUF[1]),
+        .Q(data_8bit_OBUF[2]),
         .R(rst_IBUF));
   (* BOX_TYPE = "PRIMITIVE" *) 
   FDRE #(
@@ -582,8 +535,8 @@ module Register_8bit
     ff3
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(data_8bit[2]),
-        .Q(data_8bit[3]),
+        .D(data_8bit_OBUF[2]),
+        .Q(data_8bit_OBUF[3]),
         .R(rst_IBUF));
   (* BOX_TYPE = "PRIMITIVE" *) 
   FDRE #(
@@ -594,8 +547,8 @@ module Register_8bit
     ff4
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(data_8bit[3]),
-        .Q(data_8bit[4]),
+        .D(data_8bit_OBUF[3]),
+        .Q(data_8bit_OBUF[4]),
         .R(rst_IBUF));
   (* BOX_TYPE = "PRIMITIVE" *) 
   FDRE #(
@@ -606,8 +559,8 @@ module Register_8bit
     ff5
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(data_8bit[4]),
-        .Q(data_8bit[5]),
+        .D(data_8bit_OBUF[4]),
+        .Q(data_8bit_OBUF[5]),
         .R(rst_IBUF));
   (* BOX_TYPE = "PRIMITIVE" *) 
   FDRE #(
@@ -618,440 +571,21 @@ module Register_8bit
     ff6
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(data_8bit[5]),
-        .Q(data_8bit[6]),
+        .D(data_8bit_OBUF[5]),
+        .Q(data_8bit_OBUF[6]),
         .R(rst_IBUF));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \mean[0]_i_1 
-       (.I0(\mean[0]_i_2_n_0 ),
-        .I1(size),
-        .I2(\mean[0]_i_3_n_0 ),
-        .O(sum[0]));
-  LUT6 #(
-    .INIT(64'h00000000E21D1DE2)) 
-    \mean[0]_i_2 
-       (.I0(\mean[0]_i_3_n_0 ),
-        .I1(size),
-        .I2(\mean[0]_i_2_n_0 ),
-        .I3(data_8bit[3]),
-        .I4(\ALU/carry_2 ),
-        .I5(sum1),
-        .O(\mean[0]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h96999666)) 
-    \mean[0]_i_3 
-       (.I0(\ALU/carry_2 ),
-        .I1(data_8bit[3]),
-        .I2(\mean[0]_i_2_n_0 ),
-        .I3(size),
-        .I4(\mean[0]_i_3_n_0 ),
-        .O(\mean[0]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'hEA)) 
-    \mean[0]_i_4 
-       (.I0(\ALU/FA3/carry1 ),
-        .I1(\ALU/carry_1 ),
-        .I2(\ALU/FA3/sum1 ),
-        .O(\ALU/carry_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \mean[1]_i_1 
-       (.I0(\mean[1]_i_2_n_0 ),
-        .I1(size),
-        .I2(\mean[1]_i_3_n_0 ),
-        .O(sum[1]));
-  LUT6 #(
-    .INIT(64'h00000000E21D1DE2)) 
-    \mean[1]_i_2 
-       (.I0(\mean[1]_i_3_n_0 ),
-        .I1(size),
-        .I2(\mean[1]_i_2_n_0 ),
-        .I3(data_8bit[4]),
-        .I4(\ALU/carry_3 ),
-        .I5(sum1),
-        .O(\mean[1]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h96999666)) 
-    \mean[1]_i_3 
-       (.I0(\ALU/carry_3 ),
-        .I1(data_8bit[4]),
-        .I2(\mean[1]_i_2_n_0 ),
-        .I3(size),
-        .I4(\mean[1]_i_3_n_0 ),
-        .O(\mean[1]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'hFEEEAAAA)) 
-    \mean[1]_i_4 
-       (.I0(\ALU/FA4/carry1 ),
-        .I1(\ALU/FA3/carry1 ),
-        .I2(\ALU/carry_1 ),
-        .I3(\ALU/FA3/sum1 ),
-        .I4(\ALU/FA4/sum1 ),
-        .O(\ALU/carry_3 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \mean[2]_i_1 
-       (.I0(\mean[2]_i_2_n_0 ),
-        .I1(size),
-        .I2(\mean[2]_i_3_n_0 ),
-        .O(sum[2]));
-  LUT6 #(
-    .INIT(64'h00000000E21D1DE2)) 
-    \mean[2]_i_2 
-       (.I0(\mean[2]_i_3_n_0 ),
-        .I1(size),
-        .I2(\mean[2]_i_2_n_0 ),
-        .I3(data_8bit[5]),
-        .I4(\ALU/carry_4 ),
-        .I5(sum1),
-        .O(\mean[2]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h96999666)) 
-    \mean[2]_i_3 
-       (.I0(\ALU/carry_4 ),
-        .I1(data_8bit[5]),
-        .I2(\mean[2]_i_2_n_0 ),
-        .I3(size),
-        .I4(\mean[2]_i_3_n_0 ),
-        .O(\mean[2]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'hEA)) 
-    \mean[2]_i_4 
-       (.I0(\ALU/FA5/carry1 ),
-        .I1(\ALU/carry_3 ),
-        .I2(\ALU/FA5/sum1 ),
-        .O(\ALU/carry_4 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \mean[3]_i_1 
-       (.I0(\mean[3]_i_2_n_0 ),
-        .I1(size),
-        .I2(\mean[3]_i_3_n_0 ),
-        .O(sum[3]));
-  LUT6 #(
-    .INIT(64'h00000000E21D1DE2)) 
-    \mean[3]_i_2 
-       (.I0(\mean[3]_i_3_n_0 ),
-        .I1(size),
-        .I2(\mean[3]_i_2_n_0 ),
-        .I3(data_8bit[6]),
-        .I4(\ALU/carry_5 ),
-        .I5(sum1),
-        .O(\mean[3]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h96999666)) 
-    \mean[3]_i_3 
-       (.I0(\ALU/carry_5 ),
-        .I1(data_8bit[6]),
-        .I2(\mean[3]_i_2_n_0 ),
-        .I3(size),
-        .I4(\mean[3]_i_3_n_0 ),
-        .O(\mean[3]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \mean[4]_i_1 
-       (.I0(\mean[4]_i_2_n_0 ),
-        .I1(size),
-        .I2(\mean[4]_i_3_n_0 ),
-        .O(sum[4]));
-  LUT6 #(
-    .INIT(64'h0000003C5A5A003C)) 
-    \mean[4]_i_2 
-       (.I0(\mean[4]_i_2_n_0 ),
-        .I1(\mean[4]_i_3_n_0 ),
-        .I2(\ALU/carry_6 ),
-        .I3(\mean[7]_i_4_n_0 ),
-        .I4(size),
-        .I5(\mean[6]_i_2_n_0 ),
-        .O(\mean[4]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h070707F8F8F807F8)) 
-    \mean[4]_i_3 
-       (.I0(\ALU/FA7/sum1 ),
-        .I1(\ALU/carry_5 ),
-        .I2(\ALU/FA7/carry1 ),
-        .I3(\mean[4]_i_3_n_0 ),
-        .I4(size),
-        .I5(\mean[4]_i_2_n_0 ),
-        .O(\mean[4]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h1122222278787878)) 
-    \mean[5]_i_1 
-       (.I0(sum[5]),
-        .I1(sum1),
-        .I2(\ALU/FA8/carry2 ),
-        .I3(sum[4]),
-        .I4(\ALU/carry_6 ),
-        .I5(size),
-        .O(sum[5]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT4 #(
-    .INIT(16'hA808)) 
-    \mean[5]_i_10 
-       (.I0(data_8bit[2]),
-        .I1(\mean[5]_i_12_n_0 ),
-        .I2(size),
-        .I3(\mean[5]_i_13_n_0 ),
-        .O(\ALU/FA3/carry1 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT4 #(
-    .INIT(16'hA808)) 
-    \mean[5]_i_11 
-       (.I0(data_8bit[3]),
-        .I1(\mean[0]_i_3_n_0 ),
-        .I2(size),
-        .I3(\mean[0]_i_2_n_0 ),
-        .O(\ALU/FA4/carry1 ));
-  LUT5 #(
-    .INIT(32'h96999666)) 
-    \mean[5]_i_12 
-       (.I0(\ALU/carry_1 ),
-        .I1(data_8bit[2]),
-        .I2(\mean[5]_i_13_n_0 ),
-        .I3(size),
-        .I4(\mean[5]_i_12_n_0 ),
-        .O(\mean[5]_i_12_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000E21D1DE2)) 
-    \mean[5]_i_13 
-       (.I0(\mean[5]_i_12_n_0 ),
-        .I1(size),
-        .I2(\mean[5]_i_13_n_0 ),
-        .I3(data_8bit[2]),
-        .I4(\ALU/carry_1 ),
-        .I5(sum1),
-        .O(\mean[5]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT4 #(
-    .INIT(16'hA808)) 
-    \mean[5]_i_14 
-       (.I0(data_8bit[1]),
-        .I1(\mean[5]_i_18_n_0 ),
-        .I2(size),
-        .I3(\mean[5]_i_19_n_0 ),
-        .O(\ALU/FA2/carry1 ));
-  LUT4 #(
-    .INIT(16'h1DE2)) 
-    \mean[5]_i_15 
-       (.I0(\ALU/FA1/sum1 ),
-        .I1(size),
-        .I2(\mean[5]_i_16_n_0 ),
-        .I3(data_8bit[0]),
-        .O(\ALU/FA1/sum1 ));
-  LUT5 #(
-    .INIT(32'h0000656A)) 
-    \mean[5]_i_16 
-       (.I0(data_8bit[0]),
-        .I1(\mean[5]_i_16_n_0 ),
-        .I2(size),
-        .I3(\ALU/FA1/sum1 ),
-        .I4(sum1),
-        .O(\mean[5]_i_16_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT4 #(
-    .INIT(16'h1DE2)) 
-    \mean[5]_i_17 
-       (.I0(\mean[5]_i_18_n_0 ),
-        .I1(size),
-        .I2(\mean[5]_i_19_n_0 ),
-        .I3(data_8bit[1]),
-        .O(\ALU/FA2/sum1 ));
-  LUT5 #(
-    .INIT(32'h96999666)) 
-    \mean[5]_i_18 
-       (.I0(\ALU/FA1/carry1 ),
-        .I1(data_8bit[1]),
-        .I2(\mean[5]_i_19_n_0 ),
-        .I3(size),
-        .I4(\mean[5]_i_18_n_0 ),
-        .O(\mean[5]_i_18_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000E21D1DE2)) 
-    \mean[5]_i_19 
-       (.I0(\mean[5]_i_18_n_0 ),
-        .I1(size),
-        .I2(\mean[5]_i_19_n_0 ),
-        .I3(data_8bit[1]),
-        .I4(\ALU/FA1/carry1 ),
-        .I5(sum1),
-        .O(\mean[5]_i_19_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFEEEEEAAAAAAAA)) 
-    \mean[5]_i_2 
-       (.I0(\ALU/FA7/carry1 ),
-        .I1(\ALU/FA6/carry1 ),
-        .I2(\ALU/FA5/carry1 ),
-        .I3(\ALU/FA5/carry2 ),
-        .I4(\ALU/FA6/sum1 ),
-        .I5(\ALU/FA7/sum1 ),
-        .O(\ALU/carry_6 ));
-  LUT4 #(
-    .INIT(16'hA808)) 
-    \mean[5]_i_20 
-       (.I0(data_8bit[0]),
-        .I1(\ALU/FA1/sum1 ),
-        .I2(size),
-        .I3(\mean[5]_i_16_n_0 ),
-        .O(\ALU/FA1/carry1 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'hA808)) 
-    \mean[5]_i_3 
-       (.I0(data_8bit[5]),
-        .I1(\mean[2]_i_3_n_0 ),
-        .I2(size),
-        .I3(\mean[2]_i_2_n_0 ),
-        .O(\ALU/FA6/carry1 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT4 #(
-    .INIT(16'hA808)) 
-    \mean[5]_i_4 
-       (.I0(data_8bit[4]),
-        .I1(\mean[1]_i_3_n_0 ),
-        .I2(size),
-        .I3(\mean[1]_i_2_n_0 ),
-        .O(\ALU/FA5/carry1 ));
-  LUT6 #(
-    .INIT(64'hAAAAAAAA88888000)) 
-    \mean[5]_i_5 
-       (.I0(\ALU/FA5/sum1 ),
-        .I1(\ALU/FA4/sum1 ),
-        .I2(\ALU/FA3/sum1 ),
-        .I3(\ALU/carry_1 ),
-        .I4(\ALU/FA3/carry1 ),
-        .I5(\ALU/FA4/carry1 ),
-        .O(\ALU/FA5/carry2 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'h1DE2)) 
-    \mean[5]_i_6 
-       (.I0(\mean[2]_i_3_n_0 ),
-        .I1(size),
-        .I2(\mean[2]_i_2_n_0 ),
-        .I3(data_8bit[5]),
-        .O(\ALU/FA6/sum1 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT4 #(
-    .INIT(16'h1DE2)) 
-    \mean[5]_i_7 
-       (.I0(\mean[0]_i_3_n_0 ),
-        .I1(size),
-        .I2(\mean[0]_i_2_n_0 ),
-        .I3(data_8bit[3]),
-        .O(\ALU/FA4/sum1 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT4 #(
-    .INIT(16'h1DE2)) 
-    \mean[5]_i_8 
-       (.I0(\mean[5]_i_12_n_0 ),
-        .I1(size),
-        .I2(\mean[5]_i_13_n_0 ),
-        .I3(data_8bit[2]),
-        .O(\ALU/FA3/sum1 ));
-  LUT6 #(
-    .INIT(64'hEEEAAAEAAAAAAAAA)) 
-    \mean[5]_i_9 
-       (.I0(\ALU/FA2/carry1 ),
-        .I1(data_8bit[0]),
-        .I2(\ALU/FA1/sum1 ),
-        .I3(size),
-        .I4(\mean[5]_i_16_n_0 ),
-        .I5(\ALU/FA2/sum1 ),
-        .O(\ALU/carry_1 ));
-  LUT4 #(
-    .INIT(16'hFB08)) 
-    \mean[6]_i_1 
-       (.I0(\mean[6]_i_2_n_0 ),
-        .I1(sum[5]),
-        .I2(sum1),
-        .I3(\mean[7]_i_4_n_0 ),
-        .O(sum1));
-  LUT4 #(
-    .INIT(16'h1030)) 
-    \mean[6]_i_2 
-       (.I0(sum[5]),
-        .I1(sum1),
-        .I2(\ALU/FA8/carry2 ),
-        .I3(size),
-        .O(\mean[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h00700000)) 
-    \mean[7]_i_1 
-       (.I0(sum[5]),
-        .I1(sum1),
-        .I2(\ALU/FA8/carry2 ),
-        .I3(size),
-        .I4(\mean[7]_i_4_n_0 ),
-        .O(D));
-  LUT4 #(
-    .INIT(16'hAA80)) 
-    \mean[7]_i_2 
-       (.I0(sum[4]),
-        .I1(\ALU/FA7/sum1 ),
-        .I2(\ALU/carry_5 ),
-        .I3(\ALU/FA7/carry1 ),
-        .O(\ALU/FA8/carry2 ));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \mean[7]_i_3 
-       (.I0(sum[5]),
-        .I1(sum1),
-        .O(size));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'hCC8C)) 
-    \mean[7]_i_4 
-       (.I0(sum[5]),
-        .I1(sum1),
-        .I2(\ALU/FA8/carry2 ),
-        .I3(size),
-        .O(\mean[7]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'h1DE2)) 
-    \mean[7]_i_5 
-       (.I0(\mean[3]_i_3_n_0 ),
-        .I1(size),
-        .I2(\mean[3]_i_2_n_0 ),
-        .I3(data_8bit[6]),
-        .O(\ALU/FA7/sum1 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'hFEEEAAAA)) 
-    \mean[7]_i_6 
-       (.I0(\ALU/FA6/carry1 ),
-        .I1(\ALU/FA5/carry1 ),
-        .I2(\ALU/carry_3 ),
-        .I3(\ALU/FA5/sum1 ),
-        .I4(\ALU/FA6/sum1 ),
-        .O(\ALU/carry_5 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'hA808)) 
-    \mean[7]_i_7 
-       (.I0(data_8bit[6]),
-        .I1(\mean[3]_i_3_n_0 ),
-        .I2(size),
-        .I3(\mean[3]_i_2_n_0 ),
-        .O(\ALU/FA7/carry1 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT4 #(
-    .INIT(16'h1DE2)) 
-    \mean[7]_i_8 
-       (.I0(\mean[1]_i_3_n_0 ),
-        .I1(size),
-        .I2(\mean[1]_i_2_n_0 ),
-        .I3(data_8bit[4]),
-        .O(\ALU/FA5/sum1 ));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b0),
+    .IS_D_INVERTED(1'b0),
+    .IS_R_INVERTED(1'b0)) 
+    ff7
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b1),
+        .D(data_8bit_OBUF[6]),
+        .Q(data_8bit_OBUF[7]),
+        .R(rst_IBUF));
 endmodule
 
 (* NotValidForBitStream *)
@@ -1059,38 +593,63 @@ module Running_Average
    (data_stream,
     clk,
     rst,
+    sum,
+    data_8bit,
     mean);
   input [63:0]data_stream;
   input clk;
   input rst;
+  output [10:0]sum;
+  output [7:0]data_8bit;
   output [7:0]mean;
 
-  wire \ALU/FA10/sum1 ;
-  wire A_input_n_7;
   wire clk;
   wire clk_IBUF;
   wire clk_IBUF_BUFG;
+  wire [7:0]data_8bit;
+  wire [7:0]data_8bit_OBUF;
   wire [63:0]data_stream;
   wire [63:0]data_stream_IBUF;
   wire [7:0]mean;
-  wire [7:0]mean_OBUF;
   wire rst;
   wire rst_IBUF;
-  wire [8:3]sum;
+  wire [10:0]sum;
 
   Register_8bit A_input
-       (.D(A_input_n_7),
-        .clk_IBUF_BUFG(clk_IBUF_BUFG),
+       (.clk_IBUF_BUFG(clk_IBUF_BUFG),
+        .data_8bit_OBUF(data_8bit_OBUF),
         .data_stream_IBUF(data_stream_IBUF),
-        .rst_IBUF(rst_IBUF),
-        .sum(sum),
-        .sum1(\ALU/FA10/sum1 ));
+        .rst_IBUF(rst_IBUF));
   BUFG clk_IBUF_BUFG_inst
        (.I(clk_IBUF),
         .O(clk_IBUF_BUFG));
   IBUF clk_IBUF_inst
        (.I(clk),
         .O(clk_IBUF));
+  OBUF \data_8bit_OBUF[0]_inst 
+       (.I(data_8bit_OBUF[0]),
+        .O(data_8bit[0]));
+  OBUF \data_8bit_OBUF[1]_inst 
+       (.I(data_8bit_OBUF[1]),
+        .O(data_8bit[1]));
+  OBUF \data_8bit_OBUF[2]_inst 
+       (.I(data_8bit_OBUF[2]),
+        .O(data_8bit[2]));
+  OBUF \data_8bit_OBUF[3]_inst 
+       (.I(data_8bit_OBUF[3]),
+        .O(data_8bit[3]));
+  OBUF \data_8bit_OBUF[4]_inst 
+       (.I(data_8bit_OBUF[4]),
+        .O(data_8bit[4]));
+  OBUF \data_8bit_OBUF[5]_inst 
+       (.I(data_8bit_OBUF[5]),
+        .O(data_8bit[5]));
+  OBUF \data_8bit_OBUF[6]_inst 
+       (.I(data_8bit_OBUF[6]),
+        .O(data_8bit[6]));
+  OBUF \data_8bit_OBUF[7]_inst 
+       (.I(data_8bit_OBUF[7]),
+        .O(data_8bit[7]));
   IBUF \data_stream_IBUF[0]_inst 
        (.I(data_stream[0]),
         .O(data_stream_IBUF[0]));
@@ -1284,96 +843,65 @@ module Running_Average
        (.I(data_stream[9]),
         .O(data_stream_IBUF[9]));
   OBUF \mean_OBUF[0]_inst 
-       (.I(mean_OBUF[0]),
+       (.I(1'b0),
         .O(mean[0]));
   OBUF \mean_OBUF[1]_inst 
-       (.I(mean_OBUF[1]),
+       (.I(1'b0),
         .O(mean[1]));
   OBUF \mean_OBUF[2]_inst 
-       (.I(mean_OBUF[2]),
+       (.I(1'b0),
         .O(mean[2]));
   OBUF \mean_OBUF[3]_inst 
-       (.I(mean_OBUF[3]),
+       (.I(1'b0),
         .O(mean[3]));
   OBUF \mean_OBUF[4]_inst 
-       (.I(mean_OBUF[4]),
+       (.I(1'b0),
         .O(mean[4]));
   OBUF \mean_OBUF[5]_inst 
-       (.I(mean_OBUF[5]),
+       (.I(1'b0),
         .O(mean[5]));
   OBUF \mean_OBUF[6]_inst 
-       (.I(mean_OBUF[6]),
+       (.I(1'b0),
         .O(mean[6]));
   OBUF \mean_OBUF[7]_inst 
-       (.I(mean_OBUF[7]),
+       (.I(1'b0),
         .O(mean[7]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \mean_reg[0] 
-       (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .D(sum[3]),
-        .Q(mean_OBUF[0]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \mean_reg[1] 
-       (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .D(sum[4]),
-        .Q(mean_OBUF[1]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \mean_reg[2] 
-       (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .D(sum[5]),
-        .Q(mean_OBUF[2]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \mean_reg[3] 
-       (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .D(sum[6]),
-        .Q(mean_OBUF[3]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \mean_reg[4] 
-       (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .D(sum[7]),
-        .Q(mean_OBUF[4]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \mean_reg[5] 
-       (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .D(sum[8]),
-        .Q(mean_OBUF[5]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \mean_reg[6] 
-       (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .D(\ALU/FA10/sum1 ),
-        .Q(mean_OBUF[6]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \mean_reg[7] 
-       (.C(clk_IBUF_BUFG),
-        .CE(1'b1),
-        .D(A_input_n_7),
-        .Q(mean_OBUF[7]),
-        .R(1'b0));
   IBUF rst_IBUF_inst
        (.I(rst),
         .O(rst_IBUF));
+  OBUF \sum_OBUF[0]_inst 
+       (.I(1'b0),
+        .O(sum[0]));
+  OBUF \sum_OBUF[10]_inst 
+       (.I(1'b0),
+        .O(sum[10]));
+  OBUF \sum_OBUF[1]_inst 
+       (.I(1'b0),
+        .O(sum[1]));
+  OBUF \sum_OBUF[2]_inst 
+       (.I(1'b0),
+        .O(sum[2]));
+  OBUF \sum_OBUF[3]_inst 
+       (.I(1'b0),
+        .O(sum[3]));
+  OBUF \sum_OBUF[4]_inst 
+       (.I(1'b0),
+        .O(sum[4]));
+  OBUF \sum_OBUF[5]_inst 
+       (.I(1'b0),
+        .O(sum[5]));
+  OBUF \sum_OBUF[6]_inst 
+       (.I(1'b0),
+        .O(sum[6]));
+  OBUF \sum_OBUF[7]_inst 
+       (.I(1'b0),
+        .O(sum[7]));
+  OBUF \sum_OBUF[8]_inst 
+       (.I(1'b0),
+        .O(sum[8]));
+  OBUF \sum_OBUF[9]_inst 
+       (.I(1'b0),
+        .O(sum[9]));
 endmodule
 `ifndef GLBL
 `define GLBL

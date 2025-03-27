@@ -4,12 +4,14 @@ module Running_Average_TB();
     reg [63:0]data;
     reg clk,rst;
     wire [7:0]mean;
+    wire [7:0]shifted_data8bit;
     wire [10:0]sum;
         Running_Average UUT(
                     .data_stream(data),
                     .clk(clk),
                     .rst(rst),
                     .sum(sum),
+                    .data_8bit(shifted_data8bit),
                     .mean(mean)
                 );
                 
