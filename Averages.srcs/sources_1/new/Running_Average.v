@@ -8,8 +8,8 @@ module Running_Average(
         output reg [7:0]mean     
     );
      
-        wire [7:0] data_8bit=8'd0;
-        wire  [10:0] sum=11'd0;
+        wire [7:0] data_8bit;
+        wire  [10:0] sum;
         reg [9:0]B=10'd0;
         
         Register_8bit A_input(

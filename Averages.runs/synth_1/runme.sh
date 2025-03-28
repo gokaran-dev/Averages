@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Running_Average.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Running_Average.tcl
+EAStep vivado -log Standing_Average.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Standing_Average.tcl

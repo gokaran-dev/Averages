@@ -1,6 +1,6 @@
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 407b984251924cbb9c09b8c24a336f86 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot Running_Average_TB_func_synth xil_defaultlib.Running_Average_TB xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 407b984251924cbb9c09b8c24a336f86 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot Standing_Average_TB_func_synth xil_defaultlib.Standing_Average_TB xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -8,23 +8,28 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module unisims_ver.x_lut2_mux4
-Compiling module unisims_ver.LUT2
 Compiling module unisims_ver.x_lut3_mux8
 Compiling module unisims_ver.LUT3
 Compiling module unisims_ver.LUT4
-Compiling module unisims_ver.LUT5
 Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
 Compiling module unisims_ver.FDRE_default
 Compiling module unisims_ver.MUXF7
 Compiling module unisims_ver.MUXF8
 Compiling module xil_defaultlib.Register_8bit
 Compiling module unisims_ver.x_lut1_mux2
-Compiling module unisims_ver.LUT1(INIT=2'b01)
+Compiling module unisims_ver.LUT1
+Compiling module xil_defaultlib.Tflipflop_IP
+Compiling module xil_defaultlib.Tflipflop_IP_0
+Compiling module xil_defaultlib.Tflipflop_IP_1
+Compiling module xil_defaultlib.Tflipflop_IP_2
+Compiling module xil_defaultlib.clock_divider
 Compiling module unisims_ver.BUFG
 Compiling module unisims_ver.IBUF
 Compiling module unisims_ver.OBUF
-Compiling module xil_defaultlib.Running_Average
-Compiling module xil_defaultlib.Running_Average_TB
+Compiling module xil_defaultlib.Standing_Average
+Compiling module xil_defaultlib.Standing_Average_TB
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot Running_Average_TB_func_synth
+Built simulation snapshot Standing_Average_TB_func_synth

@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"clock_dividerTB_func_synth.v" \
+"../../../../../Averages.srcs/sim_1/new/Register_8bit_TB.v" \
+"../../../../../Averages.srcs/sim_1/new/Dynamic_11bit_Adder_TB.v" \
+"../../../../../Averages.srcs/sim_1/new/Running_Average_TB.v" \
+"../../../../../Averages.srcs/sim_1/new/Standing_Average_TB.v" \
+"../../../../../../frequency_divider/frequency_divider.srcs/sim_1/new/clock_dividerTB.v" \
+
+# Do not sort compile order
+nosort
